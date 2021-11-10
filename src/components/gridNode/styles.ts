@@ -7,6 +7,7 @@ export const StyledGridNodeContainer = styled.div<{ hasRover: boolean }>`
   padding: 5px;
   border-radius: 5px;
   background-color: ${({ hasRover }) => (hasRover ? "red" : "transparet")};
+  transition: ease 100ms;
   :hover {
     padding: 3px;
     border: 3px solid lightblue;
