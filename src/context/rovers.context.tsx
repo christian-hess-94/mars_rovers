@@ -104,7 +104,6 @@ export const RoverProvider: React.FC = ({ children }) => {
     setCommands("");
     setLookDirection("N");
     setRoverCount(rovers.length);
-    console.log({ rovers });
   };
 
   const sendAllRovers = () => {
@@ -123,32 +122,15 @@ export const RoverProvider: React.FC = ({ children }) => {
           addLog(`Executing: M`, rover, p);
           switch (rover.lookDirection) {
             case "N":
-              console.log({ roverY: rover.current.y, y });
-              if (rover.current.y === parseInt(y)) {
-                addLog(`Invalid Move`, rover, p);
-                break;
-              }
               rover.current.y++;
               break;
             case "E":
-              if (rover.current.x === parseInt(x)) {
-                addLog(`Invalid Move`, rover, p);
-                break;
-              }
               rover.current.x++;
               break;
             case "S":
-              if (rover.current.y === parseInt("1")) {
-                addLog(`Invalid Move`, rover, p);
-                break;
-              }
               rover.current.y--;
               break;
             case "W":
-              if (rover.current.x === parseInt("1")) {
-                addLog(`Invalid Move`, rover, p);
-                break;
-              }
               rover.current.x--;
               break;
           }

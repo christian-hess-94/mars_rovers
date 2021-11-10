@@ -85,7 +85,7 @@ const InputSection = (props: Props) => {
           />
         </S.StyledGridInputRow>
         {rovers.map((rover, index) => (
-          <RoverItem position={index} rover={rover} />
+          <RoverItem key={index} position={index} rover={rover} />
         ))}
       </GS.StyledContainer>
     </S.StyledInputSection>

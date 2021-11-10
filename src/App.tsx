@@ -7,8 +7,10 @@ function App() {
   return (
     <GS.App>
       <Providers>
-        <InputSection></InputSection>
-        <GridSection></GridSection>
+        <InputSection />
+        <GS.StyledFlexContainer>
+          <GridSection />
+        </GS.StyledFlexContainer>
       </Providers>
     </GS.App>
   );

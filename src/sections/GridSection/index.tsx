@@ -8,11 +8,11 @@ const GridSection = (props: Props) => {
   const { grid } = useGrid();
   return (
     <S.StyledGridSection>
-      {grid.map((gridColumn) => {
+      {grid.map((gridColumn, index) => {
         return (
-          <S.StyledGridRow>
+          <S.StyledGridRow key={index}>
             {gridColumn.map((gridNode) => (
-              <StyledGridNode gridNode={gridNode} />
+              <StyledGridNode key={gridNode.position} gridNode={gridNode} />
             ))}
           </S.StyledGridRow>
         );

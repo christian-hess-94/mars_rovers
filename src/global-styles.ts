@@ -16,3 +16,8 @@ export const StyledContainer = styled.div`
   margin: 0.2em;
   border: 2px solid gray;
 `;
+export const StyledFlexContainer = styled.div`
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+`;

@@ -42,7 +42,6 @@ export const GridProvider: React.FC = ({ children }) => {
     for (var i = 0; i < parseInt(y); i++) {
       let row: GridNode[] = new Array(parseInt(x));
       for (var j = 0; j < parseInt(x); j++) {
-        console.log({ i, j });
         row[j] = {
           x: (j + 1).toString(),
           y: (i + 1).toString(),
@@ -52,7 +51,6 @@ export const GridProvider: React.FC = ({ children }) => {
       }
       gridColumns[i] = row;
     }
-    console.table(gridColumns);
     setGridArray(gridArray);
     setGrid(gridColumns);
   };

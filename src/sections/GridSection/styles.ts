@@ -14,3 +14,8 @@ export const StyledGridRow = styled.section`
   display: flex;
   width: auto;
 `;
+export const StyledGridColumn = styled.section`
+  display: flex;
+  flex-direction: column;
+  width: auto;
+`;
