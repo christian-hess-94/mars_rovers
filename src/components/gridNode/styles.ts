@@ -1,12 +1,14 @@
 import styled from "styled-components";
 
-export const StyledGridNodeContainer = styled.div<{ hasRover: boolean }>`
+export const StyledGridNodeContainer = styled.div<{
+  hasRover: boolean;
+}>`
   border: 1px solid lightgray;
   position: relative;
   margin: 1em;
   padding: 5px;
   border-radius: 5px;
-  background-color: ${({ hasRover }) => (hasRover ? "red" : "transparet")};
+  background-color: ${({ hasRover }) => (hasRover ? "red" : "transparent")};
   transition: ease 100ms;
   :hover {
     padding: 3px;

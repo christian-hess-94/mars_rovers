@@ -23,7 +23,9 @@ const InputSection = (props: Props) => {
     commands,
     setCommands,
     rovers,
+    sendAllRovers,
   } = useRovers();
+
   return (
     <S.StyledInputSection>
       <GS.StyledContainer>
@@ -46,11 +48,13 @@ const InputSection = (props: Props) => {
               <TextInput label="X" value={roverX} changeValue={setRoverX} />
               <TextInput label="Y" value={roverY} changeValue={setRoverY} />
             </S.StyledGridInputRow>
-            <TextInput
-              label="Look Direction"
-              value={lookDirection}
-              changeValue={setLookDirection}
-            />
+            <S.StyledGridInputRow>
+              <TextInput
+                label="Look Direction"
+                value={lookDirection}
+                changeValue={setLookDirection}
+              />
+            </S.StyledGridInputRow>
           </GS.StyledContainer>
           <GS.StyledContainer>
             <S.StyledGridInputRow>
@@ -76,8 +80,8 @@ const InputSection = (props: Props) => {
           <Typography type="h3" text="Rover list" />
           <Button
             disabled={roverX > x || roverY > y}
-            label="Send Rovers"
-            onClick={createRover}
+            label="Send All Rovers"
+            onClick={sendAllRovers}
           />
         </S.StyledGridInputRow>
         {rovers.map((rover, index) => (
