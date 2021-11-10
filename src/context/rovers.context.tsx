@@ -1,5 +1,6 @@
 import { wait } from "@testing-library/dom";
 import React, { createContext, useContext, useState } from "react";
+import useGrid from "./grid.context";
 import useLog from "./log.context";
 
 export interface Rover {
@@ -68,6 +69,7 @@ const { Provider } = RoverContext;
 
 export const RoverProvider: React.FC = ({ children }) => {
   const { addLog } = useLog();
+  const { x, y } = useGrid();
   const [currentRover, setCurrentRover] = useState<Rover | null>(null);
 
   const [rovers, setRovers] = useState<Rover[]>([]);
@@ -121,15 +123,32 @@ export const RoverProvider: React.FC = ({ children }) => {
           addLog(`Executing: M`, rover, p);
           switch (rover.lookDirection) {
             case "N":
+              console.log({ roverY: rover.current.y, y });
+              if (rover.current.y === parseInt(y)) {
+                addLog(`Invalid Move`, rover, p);
+                break;
+              }
               rover.current.y++;
               break;
             case "E":
+              if (rover.current.x === parseInt(x)) {
+                addLog(`Invalid Move`, rover, p);
+                break;
+              }
               rover.current.x++;
               break;
             case "S":
+              if (rover.current.y === parseInt("1")) {
+                addLog(`Invalid Move`, rover, p);
+                break;
+              }
               rover.current.y--;
               break;
             case "W":
+              if (rover.current.x === parseInt("1")) {
+                addLog(`Invalid Move`, rover, p);
+                break;
+              }
               rover.current.x--;
               break;
           }

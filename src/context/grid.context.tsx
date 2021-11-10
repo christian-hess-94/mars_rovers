@@ -44,8 +44,8 @@ export const GridProvider: React.FC = ({ children }) => {
       for (var j = 0; j < parseInt(x); j++) {
         console.log({ i, j });
         row[j] = {
-          x: (i + 1).toString(),
-          y: (j + 1).toString(),
+          x: (j + 1).toString(),
+          y: (i + 1).toString(),
           position: position.toString(),
         };
         position++;

@@ -6,9 +6,9 @@ import { RoverProvider } from "./context/rovers.context";
 const Providers: React.FC = ({ children }) => {
   return (
     <LogProvider>
-      <RoverProvider>
-        <GridProvider>{children}</GridProvider>
-      </RoverProvider>
+      <GridProvider>
+        <RoverProvider>{children}</RoverProvider>
+      </GridProvider>
     </LogProvider>
   );
 };
