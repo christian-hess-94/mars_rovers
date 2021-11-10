@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useState } from "react";
 
-interface Rover {
+export interface Rover {
   initial: {
     x: number;
     y: number;

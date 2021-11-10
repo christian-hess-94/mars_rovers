@@ -7,6 +7,7 @@ import * as GS from "../../global-styles";
 import Typography from "../../components/typography";
 import useRovers from "../../context/rovers.context";
 import TextArea from "../../components/TextArea";
+import RoverItem from "../../components/roverItem";
 interface Props {}
 
 const InputSection = (props: Props) => {
@@ -21,13 +22,15 @@ const InputSection = (props: Props) => {
     setLookDirection,
     commands,
     setCommands,
+    rovers,
   } = useRovers();
   return (
     <S.StyledInputSection>
       <GS.StyledContainer>
+        <Typography text="Grid" type="h3" />
         <S.StyledGridInputRow>
-          <TextInput label="Grid X" value={x} changeValue={setX} />
-          <TextInput label="Grid Y" value={y} changeValue={setY} />
+          <TextInput label="X" value={x} changeValue={setX} />
+          <TextInput label="Y" value={y} changeValue={setY} />
         </S.StyledGridInputRow>
         <Button
           disabled={y === "0" || x === "0"}
@@ -36,9 +39,9 @@ const InputSection = (props: Props) => {
         />
       </GS.StyledContainer>
       <GS.StyledContainer>
+        <Typography text="Rover" type="h3" />
         <S.StyledGridInputRow>
           <GS.StyledContainer>
-            <Typography text="Rover" type="p" />
             <S.StyledGridInputRow>
               <TextInput label="X" value={roverX} changeValue={setRoverX} />
               <TextInput label="Y" value={roverY} changeValue={setRoverY} />
@@ -67,6 +70,19 @@ const InputSection = (props: Props) => {
           label="Create Rover"
           onClick={createRover}
         />
+      </GS.StyledContainer>
+      <GS.StyledContainer>
+        <S.StyledGridInputRow>
+          <Typography type="h3" text="Rover list" />
+          <Button
+            disabled={roverX > x || roverY > y}
+            label="Send Rovers"
+            onClick={createRover}
+          />
+        </S.StyledGridInputRow>
+        {rovers.map((rover, index) => (
+          <RoverItem position={index} rover={rover} />
+        ))}
       </GS.StyledContainer>
     </S.StyledInputSection>
   );
