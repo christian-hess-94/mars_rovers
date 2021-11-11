@@ -17,7 +17,7 @@ const { Provider } = LogContext;
 export const LogProvider: React.FC = ({ children }) => {
   const [logs, setLogs] = useState<string[]>([]);
   const addLog = (l: string, r: Rover, p: number) => {
-    const newLogs = logs;
+    const newLogs = [...logs];
     newLogs.push(
       `[Rover ${p}] (${r.current.x},${r.current.y},${r.lookDirection}) ${l}`
     );
