@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { GridNode as GridNodeData } from "../../context/grid.context";
-import useRovers, { Rover } from "../../context/rovers.context";
+import useRovers from "../../context/rovers.context";
 import * as S from "./styles";
 
 interface GridNodeProps {

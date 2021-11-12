@@ -1,6 +1,5 @@
 import React from "react";
 import { Rover } from "../../context/rovers.context";
-import Button from "../button";
 import Typography from "../typography";
 import * as S from "./styles";
 interface RoverItemProps {

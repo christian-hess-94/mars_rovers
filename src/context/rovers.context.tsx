@@ -1,6 +1,4 @@
-import { wait } from "@testing-library/dom";
 import React, { createContext, useContext, useState } from "react";
-import useGrid from "./grid.context";
 import useLog from "./log.context";
 
 export interface Rover {
@@ -69,7 +67,6 @@ const { Provider } = RoverContext;
 
 export const RoverProvider: React.FC = ({ children }) => {
   const { addLog } = useLog();
-  const { x, y } = useGrid();
   const [currentRover, setCurrentRover] = useState<Rover | null>(null);
 
   const [rovers, setRovers] = useState<Rover[]>([]);
