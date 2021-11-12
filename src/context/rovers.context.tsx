@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useState } from "react";
-import useLog from "./log.context";
+// import useGrid from "./grid.context";
 
 export interface Rover {
   initial: {
@@ -66,7 +66,7 @@ const RoverContext = createContext<RoverContextData>(
 const { Provider } = RoverContext;
 
 export const RoverProvider: React.FC = ({ children }) => {
-  const { addLog } = useLog();
+  // const { x, y } = useGrid();
   const [currentRover, setCurrentRover] = useState<Rover | null>(null);
 
   const [rovers, setRovers] = useState<Rover[]>([]);
@@ -105,7 +105,6 @@ export const RoverProvider: React.FC = ({ children }) => {
 
   const sendAllRovers = () => {
     rovers.forEach((rover, index) => {
-      addLog(`Starting`, rover, index);
       setCurrentRover(rover);
       sendOneRover(rover, index);
     });
@@ -116,24 +115,34 @@ export const RoverProvider: React.FC = ({ children }) => {
     rover.commands.forEach((command) => {
       switch (command) {
         case "M":
-          addLog(`Executing: M`, rover, p);
           switch (rover.lookDirection) {
             case "N":
+              // if (rover.current.y === parseInt(y)) {
+              //   break;
+              // }
               rover.current.y++;
               break;
             case "E":
+              // if (rover.current.x === parseInt(x)) {
+              //   break;
+              // }
               rover.current.x++;
               break;
             case "S":
+              // if (rover.current.y === parseInt("1")) {
+              //   break;
+              // }
               rover.current.y--;
               break;
             case "W":
+              // if (rover.current.x === parseInt("1")) {
+              //   break;
+              // }
               rover.current.x--;
               break;
           }
           break;
         case "L":
-          addLog(`Executing: L`, rover, p);
           switch (rover.lookDirection) {
             case "N":
               rover.lookDirection = "W";
@@ -150,7 +159,6 @@ export const RoverProvider: React.FC = ({ children }) => {
           }
           break;
         case "R":
-          addLog(`Executing: R`, rover, p);
           switch (rover.lookDirection) {
             case "N":
               rover.lookDirection = "E";
@@ -168,7 +176,6 @@ export const RoverProvider: React.FC = ({ children }) => {
           break;
       }
     });
-    addLog(`Done`, rover, p);
     rover.status = "done";
   };
 
