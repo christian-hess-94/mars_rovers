@@ -6,7 +6,7 @@
 
 ## Github Page
 
-[Click here](https://christian-hess-94.github.io/trains-graph/) to check this project running in it's Github Page.
+[Click here](https://christian-hess-94.github.io/mars_rovers/) to check this project running in it's Github Page.
 
 ## Explanation
 
