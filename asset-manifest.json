@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/mars_rovers/static/css/main.6dea0f05.chunk.css",
+    "main.js": "/mars_rovers/static/js/main.5f509f31.chunk.js",
+    "main.js.map": "/mars_rovers/static/js/main.5f509f31.chunk.js.map",
+    "runtime-main.js": "/mars_rovers/static/js/runtime-main.dd09c8ef.js",
+    "runtime-main.js.map": "/mars_rovers/static/js/runtime-main.dd09c8ef.js.map",
+    "static/js/2.fc0bc542.chunk.js": "/mars_rovers/static/js/2.fc0bc542.chunk.js",
+    "static/js/2.fc0bc542.chunk.js.map": "/mars_rovers/static/js/2.fc0bc542.chunk.js.map",
+    "static/js/3.0c8317ff.chunk.js": "/mars_rovers/static/js/3.0c8317ff.chunk.js",
+    "static/js/3.0c8317ff.chunk.js.map": "/mars_rovers/static/js/3.0c8317ff.chunk.js.map",
+    "index.html": "/mars_rovers/index.html",
+    "static/css/main.6dea0f05.chunk.css.map": "/mars_rovers/static/css/main.6dea0f05.chunk.css.map",
+    "static/js/2.fc0bc542.chunk.js.LICENSE.txt": "/mars_rovers/static/js/2.fc0bc542.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.dd09c8ef.js",
+    "static/js/2.fc0bc542.chunk.js",
+    "static/css/main.6dea0f05.chunk.css",
+    "static/js/main.5f509f31.chunk.js"
+  ]
+}
