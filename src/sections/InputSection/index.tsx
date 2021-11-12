@@ -70,7 +70,9 @@ const InputSection = (props: Props) => {
           </GS.StyledContainer>
         </S.StyledGridInputRow>
         <Button
-          disabled={roverX > x || roverY > y}
+          disabled={
+            parseInt(roverX) > parseInt(x) || parseInt(roverY) > parseInt(y)
+          }
           label="Create Rover"
           onClick={createRover}
         />
@@ -79,7 +81,7 @@ const InputSection = (props: Props) => {
         <S.StyledGridInputRow>
           <Typography type="h3" text="Rover list" />
           <Button
-            disabled={roverX > x || roverY > y}
+            disabled={!rovers.length}
             label="Send All Rovers"
             onClick={sendAllRovers}
           />
